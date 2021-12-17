@@ -1,8 +1,9 @@
 metadata:
   title url: https://www.illinoislegalaid.org 
   exit url: https://www.illinoislegalaid.org
+# old logo oct 2021
   logo: |
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli"><img src="/packagestatic/docassemble.ILAO/ilao.logo.noname.25.png" class="ilao_icon" alt="ILAO Icon"><h1 style="display:inline; font-family: 'Muli'; margin:10px;font-size:20px;color:#fff">Easy Form</h1>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli"><img src="/packagestatic/docassemble.ILAO/logo1.png" class="ilao_icon" alt="ILAO Icon"><h1 style="display:inline; font-family: 'Muli'; margin:10px;font-size:20px;color:#fff">Easy Form</h1>
 ---
 modules:
   - .toolbox
@@ -11,6 +12,7 @@ modules:
 features:
   progress bar: True
   navigation: True
+  navigation back button: False
   question help button: True
   question back button: True
   css: 

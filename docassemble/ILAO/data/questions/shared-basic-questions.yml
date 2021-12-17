@@ -103,6 +103,9 @@ comment: |
   `user_role='defendant'` in your code.
 question: |
   Did you start this case, or are you responding to a case that someone else filed against you?
+subquestion: |
+  ${ collapse_template(user_role_help) }  
+
 fields: 
   - no label: user_ask_role
     datatype: radio
@@ -121,15 +124,14 @@ fields:
     show if:
       variable: user_ask_role
       is: "defendant"
-help:
-  label: |
-    How do I know?
-  content: |
-    If you are the first person to file a form in the case, you 
-    started the case. You are the **Plaintiff** or the **Petitioner.**
-
-    If you are responding to a case or court papers someone else filed, you
-    are the **Defendant** or the **Respondent.**
+---
+template: user_role_help
+subject: |
+  **How do I know?**
+content: |  
+  If you are the first person to file a form in the case, you started the case. You are the **Plaintiff** or the **Petitioner.**
+  
+  If you are responding to a case or court papers someone else filed, you are the **Defendant** or the **Respondent.**
 ---
 code: |
   current_interview_url = user_info().filename
@@ -149,4 +151,10 @@ subquestion: |
   % endfor
   
   [View all of your saved online forms](${url_of('interviews')})
-
+---
+# added 11-1-2021 to customize email ALDocumentBundle forms functionality
+---
+generic object: ALDocumentBundle
+template: x.get_email_copy
+content: |
+  Get a copy of your forms by email
