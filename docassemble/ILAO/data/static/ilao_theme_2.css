@@ -94,6 +94,14 @@ a
 .daterm {
     cursor: pointer;
     color: #007D56;
+    text-decoration:none;
+    text-decoration-line: none;
+}
+
+.daterm:hover {
+    color: #007D56;
+    text-decoration: none;
+    text-decoration-line: none;
 }
 
 div.progress-bar {

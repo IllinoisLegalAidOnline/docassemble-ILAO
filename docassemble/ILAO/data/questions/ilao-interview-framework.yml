@@ -18,7 +18,6 @@ features:
   css: 
     - ilao_docs_table.css
     - ilao_theme_2.css
-    #- ilao_theme.css
 ---
 default screen parts:
   logo: |
