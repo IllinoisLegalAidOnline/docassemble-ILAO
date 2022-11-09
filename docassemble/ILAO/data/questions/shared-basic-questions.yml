@@ -193,11 +193,6 @@ subquestion: |
 ---
 # added 11-1-2021 to customize email ALDocumentBundle forms functionality
 ---
-generic object: ALDocumentBundle
-template: x.get_email_copy
-content: |
-  Get a copy of your forms by email
----
 id: start a new session
 question: |
   Do you want to start over?
@@ -363,3 +358,12 @@ template: x.get_email_copy
 content: |
   Send a copy of your forms to your email
 ---
+generic object: ALAddress
+template: x.unit_label
+content: |
+  Address line 2
+---
+generic object: ALAddress
+template: x.postal_code_label
+content: |
+  ZIP Code
