@@ -53,7 +53,10 @@ setup(name='docassemble.ILAO',
       license='The MIT License (MIT)',
       url='https://docassemble.org',
       packages=find_namespace_packages(),
-      install_requires=['docassemble.AssemblyLine @ git+https://github.com/SuffolkLITLab/docassemble-AssemblyLine.git@main'],
+      install_requires=['docassemble.AssemblyLine @ git+https://github.com/SuffolkLITLab/docassemble-AssemblyLine.git@main',
+                        'docassemble.EFSPIntegration @ git+https://github.com/SuffolkLITLab/docassemble-EFSPIntegration.git@main',
+                        'docassemble.ALToolbox@ git+https://github.com/SuffolkLITLab/docassemble-ALToolbox.git@main'
+      ],
       zip_safe=False,
       package_data=find_package_data(where='docassemble/ILAO/', package='docassemble.ILAO'),
      )

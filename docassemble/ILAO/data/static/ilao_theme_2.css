@@ -70,6 +70,11 @@ a
     background-color: transparent;
 }
 
+/* Bold all links, according to ILAO Style. */
+p a {
+  font-weight:bold;
+}
+
 .btn-primary {
     border-radius: 0px;
     color: #fff;
