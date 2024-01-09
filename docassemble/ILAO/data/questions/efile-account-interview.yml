@@ -1,0 +1,77 @@
+---
+include:
+  - docassemble.EFSPIntegration:unauthenticated_interview.yml
+  - docassemble.AssemblyLine:assembly_line.yml
+  - docassemble.ILAO:ilao-interview-framework.yml
+  - docassemble.ILAO:shared-basic-questions.yml
+---
+code: |
+  interview_short_title = "Fee Waiver"
+  form_name = "fee waiver"
+  ilao_easy_form_url = "https://www.illinoislegalaid.org/legal-information/fee-waiver"
+  ilao_easy_form_title = "Fee Waiver"
+  user_has_saved_answers = False
+---
+metadata:
+  title: eFileIL Account
+  short title: efileIL
+---
+default screen parts:
+  logo: |
+    <div class="title-container">
+      <div class="al-logo">
+        <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online's Logo">
+      </div>
+      <div class="al-title">
+        <div class="title-row-1">${ all_variables(special='metadata').get('title','').rstrip() }</div>
+        <div class="title-row-2">User Management</div>
+      </div>
+    </div> 
+  short logo: |
+    <div class="title-container">
+      <div class="al-logo">
+        <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online's Logo">
+      </div>
+      <div class="al-title">
+        <div class="title-row-1">${ all_variables(special='metadata').get('short title','').rstrip() }</div>
+        <div class="title-row-2">User Management</div>
+      </div>
+    </div>
+
+  under: ""
+  right: ""
+---
+# overriding a variable from unauth interview to change wording
+variable name: account_action_list
+data: !!omap
+  - register: "Create an eFileIL account"
+  - reset_user_password: "Reset your eFileIL password"
+  - self_resend_activation: "Resend eFileIL activation email"
+---
+variable name: account_registration_choices
+data: !!omap
+  - INDIVIDUAL: Self-represented user
+---
+code: |
+  jurisdiction_id = 'illinois'
+---
+id: unauth-register-done
+question: |
+  % if register_resp.is_ok():
+  Successfully registered
+  % else:
+  Something went wrong when we tried to register your account
+  % endif
+subquestion: |
+  % if register_resp.is_ok():
+  You will get an email from efile${ state_name_to_code(jurisdiction_id) } asking you to activate your account.
+
+  You can resend this activation email from the next screen.
+
+  When you activate your account, you may see information from our partner, the Suffolk University LIT Lab.
+
+  % else:
+  ${ debug_display(register_resp) }
+  % endif
+
+continue button field: register_status
