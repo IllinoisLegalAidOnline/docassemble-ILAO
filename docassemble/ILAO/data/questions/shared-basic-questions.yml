@@ -359,4 +359,9 @@ subquestion: |
   ###### You do not need to refresh your screen. Hang in there!
   
   [NEWLINE]
----  
+---
+generic object: ALDocumentBundle
+template: x.get_email_copy
+content: |
+  Send a copy of your forms to your email
+---
