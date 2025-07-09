@@ -44,19 +44,16 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
     return out
 
 setup(name='docassemble.ILAO',
-      version='1.1.16',
+      version='1.1.17',
       description=('A docassemble extension.'),
-      long_description='# docassemble.ILAO\r\n\r\nA docassemble extension.\r\n\r\n## Author\r\n\r\nMatt Newsted, mnewsted@illinoislegalaid.org\r\nVivian McNaughton, vmcnaughton@illinoislegalaid.org\r\n\r\n',
+      long_description='# docassemble.ILAO\r\n\r\nA docassemble extension.\r\n\r\n## Author\r\n\r\nMatt Newsted, mnewsted@illinoislegalaid.org\r\nVivian McNaughton, vmcnaughton@illinoislegalaid.org\r\nBryce Willey, bwilley@suffolk.edu\r\n\r\n',
       long_description_content_type='text/markdown',
       author='Matt Newsted',
       author_email='mnewsted@illinoislegalaid.org',
       license='The MIT License (MIT)',
       url='https://docassemble.org',
       packages=find_namespace_packages(),
-      install_requires=['docassemble.AssemblyLine @ git+https://github.com/SuffolkLITLab/docassemble-AssemblyLine.git@main',
-                        'docassemble.EFSPIntegration @ git+https://github.com/SuffolkLITLab/docassemble-EFSPIntegration.git@main',
-                        'docassemble.ALToolbox@ git+https://github.com/SuffolkLITLab/docassemble-ALToolbox.git@main'
-      ],
+      install_requires=['docassemble.AssemblyLine @ git+https://github.com/SuffolkLITLab/docassemble-AssemblyLine.git@main'],
       zip_safe=False,
       package_data=find_package_data(where='docassemble/ILAO/', package='docassemble.ILAO'),
      )
