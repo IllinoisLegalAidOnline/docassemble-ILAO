@@ -366,4 +366,4 @@ content: |
 generic object: ALAddress
 template: x.postal_code_label
 content: |
-  ZIP Code
+  ZIP code
