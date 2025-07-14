@@ -20,7 +20,7 @@ default screen parts:
   logo: |
     <div class="title-container">
       <div class="al-logo">
-        <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="">
+        <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
       </div>
       <div class="al-title">
         <div class="title-row-1">${ all_variables(special='metadata').get('title','').rstrip() }</div>
@@ -30,7 +30,7 @@ default screen parts:
   short logo: |
     <div class="title-container">
       <div class="al-logo">
-        <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="">
+        <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
       </div>
       <div class="al-title">
         <div class="title-row-1">${ all_variables(special='metadata').get('short title','').rstrip() }</div>
