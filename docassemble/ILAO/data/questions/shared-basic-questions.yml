@@ -82,7 +82,7 @@ fields:
   - Last name: user.name.last
   - Suffix: user.name.suffix
     code: |
-      name_suffix()
+      al_name_suffixes
     required: False  
 ---
 id: your birthdate
@@ -367,3 +367,16 @@ generic object: ALAddress
 template: x.postal_code_label
 content: |
   ZIP code
+
+---
+variable name: al_name_suffixes
+data:
+  - Jr
+  - Junior
+  - Sr
+  - Senior
+  - II
+  - III
+  - IV
+  - V
+  - VI
