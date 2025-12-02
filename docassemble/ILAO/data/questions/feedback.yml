@@ -9,6 +9,9 @@ include:
   - docassemble.ILAO:shared-basic-questions.yml
 #  - docassemble.ILAO:ilao-interview-framework.yml
 ---
+imports:
+  - urllib.parse
+---
 modules:
   - .toolbox
   - .ilao_easy_forms_database
@@ -111,7 +114,7 @@ content: |
   
   Variable sought (if any): ${ url_args.get('easy_form_variable') }
 
-  Error message: ${ url_args.get('easy_form_error_message') }
+  Error message: ${ urllib.parse.unquote(url_args.get('easy_form_error_message')) }
  
 ---
 code: |
