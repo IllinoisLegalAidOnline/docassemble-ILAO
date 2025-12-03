@@ -114,8 +114,7 @@ content: |
   
   Variable sought (if any): ${ url_args.get('easy_form_variable') }
 
-  Error message: ${ urllib.parse.unquote(url_args.get('easy_form_error_message')) }
- 
+  Error message: ${ url_args.get('easy_form_error_message') } 
 ---
 code: |
   email_sent_ok = send_email(to="formsupport@illinoislegalaid.org", template=forms_email)
