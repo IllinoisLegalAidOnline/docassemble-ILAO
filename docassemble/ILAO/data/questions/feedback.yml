@@ -4,6 +4,24 @@ metadata:
   title url: https://www.illinoislegalaid.org 
   exit url: https://www.illinoislegalaid.org
 ---
+# Replace the default error action to not give a link to this same feedback interview
+id: custom error action
+event: al_custom_error_action
+decoration: bug
+question: |
+  Something went wrong
+subquestion: |
+  We ran into an error when we tried to load this screen.
+  You can try one of these steps to recover your work:
+  
+  * Click **Back** and try again,
+  * Visit the [**ILAO Form Library**](https://www.illinoislegalaid.org/form-library) and try another Easy Form.
+  
+  ${ collapse_template(al_formatted_error_message) }
+buttons:
+  - Exit: exit
+  - Restart: restart
+---
 include:
   - docassemble.AssemblyLine:assembly_line.yml
   - docassemble.ILAO:shared-basic-questions.yml
