@@ -302,7 +302,6 @@ subquestion: |
 buttons:
   - Exit: exit
   - Restart: restart
-  
 ---
 template: al_formatted_error_message
 subject: |
