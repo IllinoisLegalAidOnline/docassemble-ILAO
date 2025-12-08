@@ -295,7 +295,7 @@ subquestion: |
   You can try one of these steps to recover your work:
   
   * Click **Back** and try again,
-  * [:comment-dots: **Tell us what happened**](${ interview_url(i="docassemble.ILAO:feedback.yml", easy_form_interview=ilao_easy_form_url , easy_form_title=ilao_easy_form_title, easy_form_page=current_context().question_id, easy_form_variable=current_context().variable, easy_form_error_message=action_argument('error_message'), local=False,reset=1) }){target="_blank"}, or
+  * [:comment-dots: **Tell us what happened**](${ interview_url(i="docassemble.ILAO:feedback.yml", easy_form_interview=ilao_easy_form_url , easy_form_title=ilao_easy_form_title, easy_form_page=current_context().question_id, easy_form_variable=current_context().variable, easy_form_error_message=urllib.parse.quote(str(action_argument('error_message')), safe=''), local=False,reset=1) }){target="_blank"}, or
   * Visit the [**ILAO Form Library**](https://www.illinoislegalaid.org/form-library) and try another Easy Form.
   
   ${ collapse_template(al_formatted_error_message) }
