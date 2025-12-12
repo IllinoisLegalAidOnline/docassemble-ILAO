@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "docassemble.ILAO"
-version = "1.1.24"
+version = "1.1.25"
 description = "A docassemble extension."
 readme = "README.md"
 authors = [
