@@ -55,7 +55,7 @@ default screen parts:
     [${fa_icon("sign-in-alt", color="#0079d0", size="sm")} **Sign in**](${url_of('login', next=interview_url())}) or [**create**](${url_of('register', next=interview_url())}) an ILAO Easy Form account to **save your progress**.
     % endif
     
-    Feedback, suggestions, or comments? [**Let us know**](${ interview_url(i="docassemble.ILAO:feedback.yml", easy_form_interview=ilao_easy_form_url , easy_form_title=ilao_easy_form_title, easy_form_page=current_context().question_id, easy_form_variable=current_context().variable, local=False,reset=1) } ){:target="_blank"}.
+    Feedback, suggestions, or comments? [**Let us know :external-link:**](${ interview_url(i="docassemble.ILAO:feedback.yml", easy_form_interview=ilao_easy_form_url , easy_form_title=ilao_easy_form_title, easy_form_page=current_context().question_id, easy_form_variable=current_context().variable, local=False,reset=1) } ){:target="_blank"}.
 
     % if nav.get_section() != None:
     % if nav.get_section() != "section_intro" and nav.get_section() != "section_download":
