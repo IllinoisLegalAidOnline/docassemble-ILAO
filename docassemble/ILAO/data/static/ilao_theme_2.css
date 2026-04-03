@@ -317,4 +317,19 @@ a.daclickable.danavlink,
 
 
 
-
+/* administrative pages (login/register) */
+#nav-title-container {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  grid-template-rows: min-content;
+  gap: 0px 0.5em;
+  grid-template-areas: "logo title";
+  justify-items: start;
+  align-items: center;
+}
+.al-logo {
+    grid-area: logo;
+}
+.al-title {
+    grid-area: title;
+}

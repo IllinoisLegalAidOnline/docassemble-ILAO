@@ -22,6 +22,12 @@ features:
     - ilao_theme_2.css
     #- ilao_theme.css
 ---
+translations:
+  - ILAO_es.xlsx
+---
+code: |
+  al_interview_languages = ["en", "es"]
+---
 default screen parts:
   logo: |
     <div class="title-container">
@@ -43,7 +49,8 @@ default screen parts:
         <div class="title-row-2">${ "Easy Form" }</div>
       </div>
     </div>
-
+  navigation bar html: |
+    ${ get_language_list_dropdown(al_interview_languages,current=al_user_language, extra_class="text-light", icon="fas fa-language fa-xl" ) }
   corner back button label: |
     Back
   back button label: |

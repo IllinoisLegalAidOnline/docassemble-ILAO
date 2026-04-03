@@ -22,7 +22,7 @@ features:
 ---
 default screen parts:
   logo: |
-    <div class="title-container">
+    <div id='nav-title-container' class='title-container'>
       <div class="al-logo">
         <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
       </div>
@@ -32,7 +32,7 @@ default screen parts:
       </div>
     </div> 
   short logo: |
-    <div class="title-container">
+    <div id='nav-title-container' class='title-container'>
       <div class="al-logo">
         <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
       </div>
