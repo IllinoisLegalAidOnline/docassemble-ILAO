@@ -9,6 +9,14 @@ metadata:
   title url: https://www.illinoislegalaid.org 
   exit url: https://www.illinoislegalaid.org  
 ---
+metadata:
+  language: es
+  title: Mis Formularios Fáciles
+  short title: Mis Formularios Fáciles
+  temporary session: True
+  title url: https://es.illinoislegalaid.org 
+  exit url: https://es.illinoislegalaid.org  
+---
 modules:
   - docassemble.AssemblyLine.sessions
   - docassemble.ALToolbox.misc
@@ -23,6 +31,7 @@ objects:
 # added above 9/7/22
 ---
 include:
+  - docassemble.AssemblyLine:assembly_line.yml
   - docassemble.AssemblyLine:interview_list.yml
 ---
 features:
@@ -34,6 +43,13 @@ code: |
   al_logo.alt_text = "Illinois Legal Aid Online"
   # AL_ORGANIZATION_TITLE assigned here to overwrite CourtFormsOnline
   AL_ORGANIZATION_TITLE = "ILAO Easy Forms"
+---
+translations:
+  - ILAO_es.xlsx
+---
+initial: True
+code: |
+  al_interview_languages = ["en", "es"]
 ---
 default screen parts:
   title: My Easy Forms
@@ -58,6 +74,10 @@ default screen parts:
         <div class="title-row-2">${ "In progress" }</div>
       </div>
     </div>
+  navigation bar html: |
+    % if defined('al_interview_languages') and len(al_interview_languages) > 1:
+    ${ get_language_list_dropdown(al_interview_languages,current=al_user_language, extra_class="text-light", icon="fas fa-language fa-xl" ) }
+    % endif
 ---
 mandatory: True
 code: |

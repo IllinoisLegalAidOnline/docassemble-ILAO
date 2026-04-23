@@ -1,9 +1,18 @@
+translations:
+  - ILAO_es.xlsx
+---
 metadata:
   title url: https://www.illinoislegalaid.org 
   title: Easy Forms
   short title: Easy Forms
   #logo: |
   #  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli"><img src="/packagestatic/docassemble.ILAO/ilao.logo.noname.25.png" class="ilao_icon" alt="ILAO Icon"><h1 style="display:inline; font-family: 'Muli'; margin:10px;font-size:20px;color:#fff">Easy Forms</h1>
+---
+metadata:
+  language: es
+  title url: https://es.illinoislegalaid.org 
+  title: Formularios Fáciles
+  short title: Formularios Fáciles
 ---
 modules:
   - .toolbox
@@ -15,6 +24,10 @@ include:
 terms: 
   - "Easy Forms": |
       Easy Forms make it easy to create legal forms and letters. They guide you through a simple interview. You answer questions, and the program does the work.
+---
+initial: True
+code: |
+  al_interview_languages = ["en", "es"]
 ---
 features:
   css: ilao_theme_2.css
@@ -41,7 +54,10 @@ default screen parts:
         <div class="title-row-2">${ "Home" }</div>
       </div>
     </div>
-    
+  navigation bar html: |
+    % if defined('al_interview_languages') and len(al_interview_languages) > 1:
+    ${ get_language_list_dropdown(al_interview_languages,current=al_user_language, extra_class="text-light", icon="fas fa-language fa-xl" ) }
+    % endif
   under: |
     Questions or comments? [**Contact ILAO**](https://www.illinoislegalaid.org/contact-us).
   footer: off
@@ -52,7 +68,4 @@ question: |
   **ILAO Easy Forms**
 subquestion: |
   Thank you for your interest in Illinois Legal Aid Online **{Easy Forms}**.
-
-  <a target="_self" href="https://easyforms.illinoislegalaid.org/user/sign-in?next=https://easyforms.illinoislegalaid.org/interviews">Sign in</a> to your ILAO Easy Forms account to access your saved Easy Forms.
-  
-  Looking for other forms? Check out the [**ILAO Form Library**](https://www.illinoislegalaid.org/form-library).
+---
