@@ -1,12 +1,12 @@
 [build-system]
 requires = [
-    "setuptools==80.9.0",
+    "setuptools>=80.9.0",
 ]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "docassemble.ILAO"
-version = "1.1.31"
+version = "1.1.32"
 description = "A docassemble extension."
 readme = "README.md"
 authors = [
