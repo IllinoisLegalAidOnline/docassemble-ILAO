@@ -1,4 +1,9 @@
-# do i need to add this?
+translations:
+  - ILAO_es.xlsx
+---
+initial: True
+code: |
+  al_interview_languages = ["en", "es"]
 ---
 metadata:
   title: |
@@ -16,6 +21,13 @@ metadata:
   temporary session: True
   title url: https://es.illinoislegalaid.org 
   exit url: https://es.illinoislegalaid.org  
+---
+language: es
+sections:
+  - section_in_progress_forms: Formularios en progreso
+  - section_answer_sets: Conjuntos de respuestas
+  - section_search: Búsqueda
+progressive: False
 ---
 modules:
   - docassemble.AssemblyLine.sessions
@@ -90,11 +102,7 @@ code: |
 event: section_in_progress_forms
 id: interview list
 question: |
-  % if get_config("interview page heading"):
-  ${ get_config("interview page heading") }
-  % else:
-  My Easy Forms 
-  % endif
+  ${ get_config("interview page heading") or "My Easy Forms" }
 subquestion: |
   % if len(get_saved_interview_list(filename=None, filename_to_exclude=al_session_store_default_filename, exclude_filenames=al_sessions_to_exclude_from_interview_list, exclude_newly_started_sessions=True)) > 0:
   % if get_config("interview page pre"):
@@ -136,7 +144,7 @@ script:
       $(".al-delete-session").on('click', function(event){
         if (confirm("${ word("Are you sure you want to delete this item?") }")){
           return true;
-        }
+        };
         event.preventDefault();
         event.stopImmediatePropagation();
         return false;
@@ -144,7 +152,7 @@ script:
       $("#al-delete-all-sessions").on('click', function(event){
         if (confirm("${ word("Are you sure you want to delete ALL saved Easy Forms?") }")){
           return true;
-        }
+        };
         event.preventDefault();
         event.stopImmediatePropagation();
         return false;

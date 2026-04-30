@@ -1,5 +1,5 @@
 translations:
-  - ILAO_es.xlsx
+  - ILAO_es.xlsx  
 ---
 metadata:
   title url: https://www.illinoislegalaid.org 
@@ -55,8 +55,8 @@ default screen parts:
       </div>
     </div>
   navigation bar html: |
-    % if defined('al_interview_languages') and len(al_interview_languages) > 1:
-    ${ get_language_list_dropdown(al_interview_languages,current=al_user_language, extra_class="text-light", icon="fas fa-language fa-xl" ) }
+    % if enable_al_language and len(al_interview_languages) > 1:
+    ${ get_language_list_dropdown(al_interview_languages, current=session_local.attr("al_user_language") or al_user_language, icon="fas fa-globe fa-xl") }
     % endif
   under: |
     Questions or comments? [**Contact ILAO**](https://www.illinoislegalaid.org/contact-us).

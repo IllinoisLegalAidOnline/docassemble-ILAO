@@ -3,6 +3,9 @@ translations:
 ---
 initial: True
 code: |
+  enable_al_language = True
+---
+code: |
   al_interview_languages = ["en", "es"]
 ---
 metadata:
@@ -59,7 +62,9 @@ default screen parts:
       </div>
     </div>
   navigation bar html: |
-    ${ get_language_list_dropdown(al_interview_languages,current=al_user_language, extra_class="text-light", icon="fas fa-language fa-xl" ) }
+    % if enable_al_language and len(al_interview_languages) > 1:
+    ${ get_language_list_dropdown(al_interview_languages, current=session_local.attr("al_user_language") or al_user_language, icon="fas fa-globe fa-xl") }
+    % endif
   corner back button label: |
     Back
   back button label: |
@@ -81,7 +86,7 @@ default screen parts:
     ${ action_button_html(url_action('review_answers'), label=word(':edit: Edit answers'), color='success', size="md") }
     % endif
     % endif
-% endif
+    % endif
   right: |
     % if user_has_saved_answers:
     :bell: Saved answers available!  
