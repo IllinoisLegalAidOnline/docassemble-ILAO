@@ -1,27 +1,12 @@
 translations:
   - ILAO_es.xlsx
 ---
-initial: True
-code: |
-  enable_al_language = True
----
-code: |
-  al_interview_languages = ["en", "es"]
----
 metadata:
-  title url: https://www.illinoislegalaid.org 
-  exit url: https://www.illinoislegalaid.org
-  # old logo oct 2021
+  title url: 
+    "en*": https://www.illinoislegalaid.org 
+    "es": https://es.illinoislegalaid.org 
   logo: |
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli"><img src="/packagestatic/docassemble.ILAO/logo1.png" class="ilao_icon" alt="ILAO Icon"><h1 style="display:inline; font-family: 'Muli'; margin:10px;font-size:20px;color:#fff">Easy Form</h1>
----
-metadata:
-  language: es
-  title url: https://es.illinoislegalaid.org 
-  exit url: https://es.illinoislegalaid.org
-  # old logo oct 2021
-  logo: |
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli"><img src="/packagestatic/docassemble.ILAO/logo1.png" class="ilao_icon" alt="ILAO Icon"><h1 style="display:inline; font-family: 'Muli'; margin:10px;font-size:20px;color:#fff">Formularios Fáciles</h1>
 ---
 modules:
   - .toolbox
@@ -41,23 +26,25 @@ features:
     #- ilao_theme.css
 ---
 default screen parts:
+  title: |
+    ${ localized_metadata_text(all_variables(special='metadata'), 'title') }
   logo: |
     <div id='nav-title-container' class='title-container'>
       <div class="al-logo">
         <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
       </div>
       <div class="al-title">
-        <div class="title-row-1">${ all_variables(special='metadata').get('title','').rstrip() }</div>
+        <div class="title-row-1">${ localized_metadata_text(all_variables(special='metadata'), 'title') }</div>
         <div class="title-row-2">${ "Easy Form" }</div>
       </div>
-    </div> 
+    </div>
   short logo: |
     <div id='nav-title-container' class='title-container'>
       <div class="al-logo">
         <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
       </div>
       <div class="al-title">
-        <div class="title-row-1">${ all_variables(special='metadata').get('short title','').rstrip() }</div>
+        <div class="title-row-1">${ localized_metadata_text(all_variables(special='metadata'), 'title') }</div>
         <div class="title-row-2">${ "Easy Form" }</div>
       </div>
     </div>
@@ -73,17 +60,17 @@ default screen parts:
     Next
   under: |
     % if not user_logged_in():
-    [${fa_icon("sign-in-alt", color="#0079d0", size="sm")} **Sign in**](${url_of('login', next=interview_url())}) or [**create**](${url_of('register', next=interview_url())}) an ILAO Easy Form account to **save your progress**.
+    [${fa_icon('sign-in-alt', color='#0079d0', size='sm')} **Sign in**](${url_of('login', next=interview_url())}) or [**create**](${url_of('register', next=interview_url())}) an ILAO Easy Form account to **save your progress**.
     % endif
 
     Feedback, suggestions, or comments? [**Let us know**](${ interview_url(i='docassemble.ILAO:feedback.yml',easy_form_interview=ilao_easy_form_url,easy_form_title=ilao_easy_form_title,easy_form_page=current_context().question_id,easy_form_variable=current_context().variable,local=False,reset=1) }){:target='_blank'}.
 
     % if nav.get_section() != None:
-    % if nav.get_section() != "section_intro" and nav.get_section() != "section_download":
+    % if nav.get_section() != 'section_intro' and nav.get_section() != 'section_download':
     % if current_context().question_id == None:
-    ${ action_button_html(url_action('review_answers'), label=word(':edit: Edit answers'), color='success', size="md") }
-    % elif "review screen" not in current_context().question_id:
-    ${ action_button_html(url_action('review_answers'), label=word(':edit: Edit answers'), color='success', size="md") }
+    ${ action_button_html(url_action('review_answers'), label=word('^^edit^^ Edit answers'), color='success', size='md') }
+    % elif 'review screen' not in current_context().question_id:
+    ${ action_button_html(url_action('review_answers'), label=word('^^edit^^ Edit answers'), color='success', size='md') }
     % endif
     % endif
     % endif

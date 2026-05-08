@@ -1,46 +1,45 @@
 translations:
-  - ILAO_es.xlsx  
+  - ILAO_es.xlsx
+---
+initial: True
+code: |
+  al_interview_languages = ["en","es"]
 ---
 metadata:
-  title url: https://www.illinoislegalaid.org 
-  title: Easy Forms
-  short title: Easy Forms
-  #logo: |
-  #  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli"><img src="/packagestatic/docassemble.ILAO/ilao.logo.noname.25.png" class="ilao_icon" alt="ILAO Icon"><h1 style="display:inline; font-family: 'Muli'; margin:10px;font-size:20px;color:#fff">Easy Forms</h1>
----
-metadata:
-  language: es
-  title url: https://es.illinoislegalaid.org 
-  title: Formularios Fáciles
-  short title: Formularios Fáciles
+  title url: 
+    "en*": https://www.illinoislegalaid.org 
+    "es": https://es.illinoislegalaid.org 
+  title: 
+    "en*": Easy Forms
+    "es": Formularios Fáciles
+  short title:
+    "en*": Easy Forms
+    "es": Formularios Fáciles
 ---
 modules:
   - .toolbox
 ---
 include:
   - docassemble.AssemblyLine:assembly_line.yml
-  - docassemble.ILAO:shared-basic-questions.yml
 ---
 terms: 
   - "Easy Forms": |
       Easy Forms make it easy to create legal forms and letters. They guide you through a simple interview. You answer questions, and the program does the work.
 ---
-initial: True
-code: |
-  al_interview_languages = ["en", "es"]
----
 features:
   css: ilao_theme_2.css
-  question back button: True
+  question back button: False
 ---
 default screen parts:
+  title: |
+    ${ localized_metadata_text(all_variables(special='metadata'), 'title') }
   logo: |
     <div id='nav-title-container' class='title-container'>
       <div class="al-logo">
         <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
       </div>
       <div class="al-title">
-        <div class="title-row-1">${ all_variables(special='metadata').get('title','').rstrip() }</div>
+        <div class="title-row-1">${ localized_metadata_text(all_variables(special='metadata'), 'title') }</div>
         <div class="title-row-2">${ "Home" }</div>
       </div>
     </div> 
@@ -50,7 +49,7 @@ default screen parts:
         <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
       </div>
       <div class="al-title">
-        <div class="title-row-1">${ all_variables(special='metadata').get('short title','').rstrip() }</div>
+        <div class="title-row-1">${ localized_metadata_text(all_variables(special='metadata'), 'short title') }</div>
         <div class="title-row-2">${ "Home" }</div>
       </div>
     </div>
@@ -62,10 +61,14 @@ default screen parts:
     Questions or comments? [**Contact ILAO**](https://www.illinoislegalaid.org/contact-us).
   footer: off
 ---
-id: home
 mandatory: True
+id: home
 question: |
   **ILAO Easy Forms**
 subquestion: |
   Thank you for your interest in Illinois Legal Aid Online **{Easy Forms}**.
+  
+  <a target="_self" href="https://easyforms.illinoislegalaid.org/user/sign-in?next=https://easyforms.illinoislegalaid.org/interviews">Sign in</a> to your ILAO Easy Forms account to access your saved Easy Forms.
+  
+  Looking for other forms? Check out the [**ILAO Form Library**](https://www.illinoislegalaid.org/form-library).
 ---

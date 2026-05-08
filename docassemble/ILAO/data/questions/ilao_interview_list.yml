@@ -3,25 +3,27 @@ translations:
 ---
 initial: True
 code: |
-  al_interview_languages = ["en", "es"]
+  al_interview_languages = ["en","es"]
 ---
 metadata:
-  title: |
-    My Easy Forms
-  short title: |
-    My Easy Forms
+  interview page title:
+    en: My Easy Forms
+    es: Mis Formularios Fáciles
+  title: 
+    "en*": My Easy Forms
+    "es": Mis Formularios Fáciles
+  short title:
+    "en*": My Easy Forms
+    "es": Mis Formularios Fáciles
   temporary session: True
-  title url: https://www.illinoislegalaid.org 
-  exit url: https://www.illinoislegalaid.org  
+  title url: 
+    "en*": https://www.illinoislegalaid.org 
+    "es": https://es.illinoislegalaid.org 
+  exit url:
+    "en*": https://www.illinoislegalaid.org 
+    "es": https://es.illinoislegalaid.org 
 ---
-metadata:
-  language: es
-  title: Mis Formularios Fáciles
-  short title: Mis Formularios Fáciles
-  temporary session: True
-  title url: https://es.illinoislegalaid.org 
-  exit url: https://es.illinoislegalaid.org  
----
+# Spanish section
 language: es
 sections:
   - section_in_progress_forms: Formularios en progreso
@@ -46,50 +48,34 @@ include:
   - docassemble.AssemblyLine:assembly_line.yml
   - docassemble.AssemblyLine:interview_list.yml
 ---
+modules:
+  - .toolbox
+---
 features:
   css:
     - ilao_theme_2.css
     - interview_list.css     
+  question back button: False
 ---
 code: |
   al_logo.alt_text = "Illinois Legal Aid Online"
   # AL_ORGANIZATION_TITLE assigned here to overwrite CourtFormsOnline
   AL_ORGANIZATION_TITLE = "ILAO Easy Forms"
----
-translations:
-  - ILAO_es.xlsx
----
-initial: True
-code: |
-  al_interview_languages = ["en", "es"]
+  PAGE_TITLE = "My Easy Forms"
+  PAGE_QUESTION = "My Easy Forms"
+  LOGO_URL = "https://www.illinoislegalaid.org"
+  LOGO_IMAGE_URL = "/packagestatic/docassemble.ILAO/logo_white_30.svg"
+  LOGO_IMAGE_ALT = "Illinois Legal Aid Online"
+  NEW_FORM_URL = "https://www.illinoislegalaid.org"
+  LOGO_TITLE_ROW_1 = "My Easy Forms"
+  LOGO_TITLE_ROW_2 = "In progress"
 ---
 default screen parts:
-  title: My Easy Forms
-  # title assigned here to rename page title in the browser
-  logo: |
-    <div id='nav-title-container' class='title-container'>
-      <div class="al-logo">
-        <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="${ al_logo.alt_text }"/>
-      </div>
-      <div class="al-title">
-        <div class="title-row-1">${ "My Easy Forms" }</div>
-        <div class="title-row-2">${ "In progress" }</div>
-      </div>
-    </div> 
-  short logo: |
-    <div id='nav-title-container' class='title-container'>
-      <div class="al-logo">
-        <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="${ al_logo.alt_text }"/>
-      </div>
-      <div class="al-title">
-        <div class="title-row-1">${ "My Easy Forms" }</div>
-        <div class="title-row-2">${ "In progress" }</div>
-      </div>
-    </div>
   navigation bar html: |
-    % if defined('al_interview_languages') and len(al_interview_languages) > 1:
-    ${ get_language_list_dropdown(al_interview_languages,current=al_user_language, extra_class="text-light", icon="fas fa-language fa-xl" ) }
+    % if enable_al_language and len(al_interview_languages) > 1:
+    ${ get_language_list_dropdown(al_interview_languages, current=session_local.attr("al_user_language") or al_user_language, icon="fas fa-globe fa-xl") }
     % endif
+  footer: off
 ---
 mandatory: True
 code: |
@@ -102,7 +88,7 @@ code: |
 event: section_in_progress_forms
 id: interview list
 question: |
-  ${ get_config("interview page heading") or "My Easy Forms" }
+  My Easy Forms
 subquestion: |
   % if len(get_saved_interview_list(filename=None, filename_to_exclude=al_session_store_default_filename, exclude_filenames=al_sessions_to_exclude_from_interview_list, exclude_newly_started_sessions=True)) > 0:
   % if get_config("interview page pre"):

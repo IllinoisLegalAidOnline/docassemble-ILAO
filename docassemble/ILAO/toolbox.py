@@ -1,4 +1,6 @@
-from docassemble.base.util import defined, value
+from collections.abc import Mapping
+
+from docassemble.base.util import defined, get_language, value
 
 def _fontawesome_classes(icon, size):
   """Return normalized Font Awesome classes for an icon name or class list."""
@@ -46,3 +48,44 @@ def sum_if_defined( *pargs ):
     if defined(var):
       sum += value(var)
   return sum
+
+def _localized_text(value, language=None):
+  if value is None:
+    return ""
+
+  if not isinstance(value, Mapping):
+    return str(value).rstrip()
+
+  current_language = language or get_language() or ""
+  base_language = current_language.split('-')[0].split('_')[0] if current_language else ""
+  candidates = []
+
+  for candidate in [current_language, base_language]:
+    if candidate and candidate not in candidates:
+      candidates.append(candidate)
+    starred_candidate = f"{candidate}*" if candidate else ""
+    if starred_candidate and starred_candidate not in candidates:
+      candidates.append(starred_candidate)
+
+  candidates.append("*")
+  candidates.append("en*")
+
+  for candidate in candidates:
+    if candidate in value and value[candidate] not in (None, ""):
+      return str(value[candidate]).rstrip()
+
+  for key, localized_value in value.items():
+    if str(key).endswith('*') and localized_value not in (None, ""):
+      return str(localized_value).rstrip()
+
+  return ""
+
+def localized_metadata_text(metadata, key, language=None):
+  if not isinstance(metadata, Mapping):
+    return ""
+
+  value = metadata.get(key)
+  if value in (None, ""):
+    value = metadata.get(f"{key.replace(' ', '_')}_text")
+
+  return _localized_text(value, language=language)
