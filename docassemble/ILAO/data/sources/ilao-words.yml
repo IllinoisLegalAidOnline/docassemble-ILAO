@@ -33,7 +33,6 @@
   "You need to type in a name for the file": "Please type in a name for the file"
   "You need to type in a name for the interview": "Please type in a name for the interview"
 
-  "Saved answers": "Test"
   "In progress forms": "My Easy Forms"
 "es":
   "Are you sure you want to delete all saved interviews?": "¿Está seguro de que desea eliminar todos los Formularios Fáciles guardados?"
@@ -71,3 +70,8 @@
   "You need to type in a name for the interview": "Por favor, escriba un nombre para el Easy Form"
   "Saved answers": "Respuestas guardadas"
   "In progress forms": "Mis Formularios Fáciles"
+  "Sign in or sign up to save answers": "Inicie sesión o regístrese para guardar respuestas"
+  "Next": "Próximo"
+  "Previous": "Previo"
+  "Menu": "Menú"
+  "Yes": "Sí"
