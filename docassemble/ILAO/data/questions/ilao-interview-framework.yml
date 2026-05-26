@@ -26,6 +26,8 @@ features:
     #- ilao_theme.css
 ---
 default screen parts:
+  title url: |
+    ${ localized_metadata_text(all_variables(special='metadata'), 'title url') }
   title: |
     ${ localized_metadata_text(all_variables(special='metadata'), 'title') }
   logo: |
@@ -44,7 +46,7 @@ default screen parts:
         <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
       </div>
       <div class="al-title">
-        <div class="title-row-1">${ localized_metadata_text(all_variables(special='metadata'), 'title') }</div>
+        <div class="title-row-1">${ localized_metadata_text(all_variables(special='metadata'), 'short title') }</div>
         <div class="title-row-2">${ "Easy Form" }</div>
       </div>
     </div>

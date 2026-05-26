@@ -31,6 +31,8 @@ features:
   question back button: False
 ---
 default screen parts:
+  title url: |
+    ${ localized_metadata_text(all_variables(special='metadata'), 'title url') }
   title: |
     ${ localized_metadata_text(all_variables(special='metadata'), 'title') }
   logo: |
