@@ -91,8 +91,18 @@ id: your birthdate
 question: |
   When were you born?
 fields:
-  - Birthdate: user.birthdate
-    datatype: date
+  - Date of birth: user.birthdate
+    datatype: BirthDate
+    alDefaultMessage: ${ word('Enter a valid date of birth.') }
+    alMin: ${ today().minus(years=100) }
+    alMax: ${ today().format("yyyy-MM-dd") }
+    alMinMessage: ${ word('Must be at least 100 years ago.') }
+    alMaxMessage: ${ word('Cannot be in the future.') }
+    alInvalidDayMessage: ${ word('Cannot have that many days.') }
+    alInvalidYearMessage: ${ word('Year is not valid.') }
+    alMonthLabel: ${ word('Month') }
+    alDayLabel: ${ word('Day') }
+    alYearLabel: ${ word('Year') }
 ---
 id: your address
 question: |
@@ -100,6 +110,7 @@ question: |
 fields:
   - Street address: user.address.address
     address autocomplete: True
+    hint: ${ word("Enter a location") }
   - Address line 2: user.address.unit
     required: False
   - City: user.address.city
@@ -123,6 +134,7 @@ subquestion: |
 fields:
   - Street address: users[0].address.address
     address autocomplete: True
+    hint: ${ word("Enter a location") }
   - Address line 2: users[0].address.unit
     required: False
   - City: users[0].address.city
