@@ -1,3 +1,5 @@
+translations:
+  - ILAO_es.xlsx
 ---
 imports:
   - urllib.parse
