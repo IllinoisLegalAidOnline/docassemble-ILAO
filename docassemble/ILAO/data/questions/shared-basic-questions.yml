@@ -373,6 +373,31 @@ template: x.get_email_copy
 content: |
   Send a copy of your forms to your email
 ---
+generic object: ALDocumentBundle
+template: x.view_label
+content: |
+  ${ word("View") }
+---
+generic object: ALDocumentBundle
+template: x.download_label
+content: |
+  ${ word("Download") }
+---
+generic object: ALDocumentBundle
+template: x.send_label
+content: |
+  ${ word("Send") }
+---
+generic object: ALDocumentBundle
+template: x.zip_label
+content: |
+  ${ word("Download all") } <span class="visually-hidden">${ x.title }</span>
+---
+generic object: ALDocumentBundle
+template: x.zip_row_label
+content: |
+  All docs
+---
 generic object: ALAddress
 template: x.unit_label
 content: |
@@ -382,7 +407,6 @@ generic object: ALAddress
 template: x.postal_code_label
 content: |
   ZIP code
-
 ---
 variable name: al_name_suffixes
 data:
