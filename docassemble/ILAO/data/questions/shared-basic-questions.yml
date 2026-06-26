@@ -396,7 +396,7 @@ content: |
 generic object: ALDocumentBundle
 template: x.zip_row_label
 content: |
-  All docs
+  ${ word("All forms") }
 ---
 generic object: ALAddress
 template: x.unit_label
