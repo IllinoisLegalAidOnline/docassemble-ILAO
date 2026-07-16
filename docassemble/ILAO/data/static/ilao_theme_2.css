@@ -327,9 +327,22 @@ a.daclickable.danavlink,
   justify-items: start;
   align-items: center;
 }
+.title-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .al-logo {
-    grid-area: logo;
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+}
+.al-logo img {
+  height: 40px;
 }
 .al-title {
-    grid-area: title;
+  grid-area: title;
+  display: flex;
+  align-items: center;
+  color: white;
 }
