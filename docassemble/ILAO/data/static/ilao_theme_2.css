@@ -328,13 +328,11 @@ a.daclickable.danavlink,
   align-items: center;
 }
 .title-container {
-  display: flex;
   align-items: center;
   gap: 10px;
 }
 .al-logo {
   grid-area: logo;
-  display: flex;
   align-items: center;
 }
 .al-logo img {
@@ -342,7 +340,6 @@ a.daclickable.danavlink,
 }
 .al-title {
   grid-area: title;
-  display: flex;
   align-items: center;
   color: white;
 }
