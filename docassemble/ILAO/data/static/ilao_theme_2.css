@@ -71,8 +71,9 @@ a
 }
 
 /* Bold all links, according to ILAO Style. */
-p a {
+p a, div a {
   font-weight:bold;
+  text-decoration: none;
 }
 
 .btn-primary {
