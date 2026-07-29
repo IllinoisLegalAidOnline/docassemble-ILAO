@@ -1,54 +1,96 @@
-login page title: |
+login page navigation bar html: |
+  <li class="nav-item al-title"><i class="fa-solid fa-globe fa-xl"></i></li>
+  <li class="nav-item"><a class="nav-link" href="?lang=en">English</a></li>
+  <li class="nav-item"><a class="nav-link" href="?lang=es">Español</a></li>
+
+login page title:
+  en: |
     <div id='nav-title-container' class='title-container'>
         <div class='al-logo'>
             <img src="https://easyforms.illinoislegalaid.org/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
         </div>
         <div class="al-title">
-            <div class="title-row-1">Easy Forms</div>
-            <div class="title-row-2">Login</div>
+            Sign in
         </div>
     </div>
-
-register page title: |
+  es: |
     <div id='nav-title-container' class='title-container'>
         <div class='al-logo'>
             <img src="https://easyforms.illinoislegalaid.org/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
         </div>
         <div class="al-title">
-            <div class="title-row-1">Easy Forms</div>
-            <div class="title-row-2">Register</div>
+            Iniciar sesión
         </div>
     </div>
-
-change password page title: |
+register page navigation bar html: |
+  <li class="nav-item al-title"><i class="fa-solid fa-globe fa-xl"></i></li>
+  <li class="nav-item"><a class="nav-link" href="?lang=en">English</a></li>
+  <li class="nav-item"><a class="nav-link" href="?lang=es">Español</a></li>
+  
+register page title:
+  en: |
     <div id='nav-title-container' class='title-container'>
         <div class='al-logo'>
             <img src="https://easyforms.illinoislegalaid.org/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
         </div>
         <div class="al-title">
-            <div class="title-row-1">Easy Forms</div>
-            <div class="title-row-2">Change Password</div>
+            Create an account
         </div>
     </div>
-
-forgot password page title: |
+  es: |
     <div id='nav-title-container' class='title-container'>
         <div class='al-logo'>
             <img src="https://easyforms.illinoislegalaid.org/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
         </div>
         <div class="al-title">
-            <div class="title-row-1">Easy Forms</div>
-            <div class="title-row-2">Forgot Password</div>
+            Create an account
         </div>
     </div>
-
-reset password page title: |
+change password page navigation bar html: |
+  <li class="nav-item al-title"><i class="fa-solid fa-globe fa-xl"></i></li>
+  <li class="nav-item"><a class="nav-link" href="?lang=en">English</a></li>
+  <li class="nav-item"><a class="nav-link" href="?lang=es">Español</a></li>
+  
+change password page title:
+  en: |
     <div id='nav-title-container' class='title-container'>
         <div class='al-logo'>
             <img src="https://easyforms.illinoislegalaid.org/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
         </div>
         <div class="al-title">
-            <div class="title-row-1">Easy Forms</div>
-            <div class="title-row-2">Reset Password</div>
+	    Change Password
+        </div>
+    </div>
+  es: |
+    <div id='nav-title-container' class='title-container'>
+        <div class='al-logo'>
+            <img src="https://easyforms.illinoislegalaid.org/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
+        </div>
+        <div class="al-title">
+	    Change Password
+        </div>
+    </div>
+forgot password page navigation bar html: |
+  <li class="nav-item al-title"><i class="fa-solid fa-globe fa-xl"></i></li>
+  <li class="nav-item"><a class="nav-link" href="?lang=en">English</a></li>
+  <li class="nav-item"><a class="nav-link" href="?lang=es">Español</a></li>
+  
+forgot password page title:
+  en: |
+    <div id='nav-title-container' class='title-container'>
+        <div class='al-logo'>
+            <img src="https://easyforms.illinoislegalaid.org/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
+        </div>
+        <div class="al-title">
+            Forgot Password
+        </div>
+    </div>
+  es: |
+    <div id='nav-title-container' class='title-container'>
+        <div class='al-logo'>
+            <img src="https://easyforms.illinoislegalaid.org/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
+        </div>
+        <div class="al-title">
+            Forgot Password
         </div>
     </div>
