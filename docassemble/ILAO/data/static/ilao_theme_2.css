@@ -348,3 +348,9 @@ a.daclickable.danavlink,
   align-items: center;
   color: white;
 }
+.nav-el {
+  grid-area: title;
+  display: flex;
+  align-items: center;
+  color: white;
+}

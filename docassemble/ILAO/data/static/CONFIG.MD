@@ -1,8 +1,8 @@
 login page navigation bar html: |
-  <li class="nav-item al-title"><i class="fa-solid fa-globe fa-xl"></i></li>
+  <li class="nav-item nav-el"><i class="fa-solid fa-globe fa-xl"></i></li>
   <li class="nav-item"><a class="nav-link" href="?lang=en">English</a></li>
+  <li class="nav-item nav-el">|</li>
   <li class="nav-item"><a class="nav-link" href="?lang=es">Español</a></li>
-
 login page title:
   en: |
     <div id='nav-title-container' class='title-container'>
@@ -23,10 +23,10 @@ login page title:
         </div>
     </div>
 register page navigation bar html: |
-  <li class="nav-item al-title"><i class="fa-solid fa-globe fa-xl"></i></li>
+  <li class="nav-item nav-el"><i class="fa-solid fa-globe fa-xl"></i></li>
   <li class="nav-item"><a class="nav-link" href="?lang=en">English</a></li>
+  <li class="nav-item nav-el">|</li>
   <li class="nav-item"><a class="nav-link" href="?lang=es">Español</a></li>
-  
 register page title:
   en: |
     <div id='nav-title-container' class='title-container'>
@@ -47,10 +47,10 @@ register page title:
         </div>
     </div>
 change password page navigation bar html: |
-  <li class="nav-item al-title"><i class="fa-solid fa-globe fa-xl"></i></li>
+  <li class="nav-item nav-el"><i class="fa-solid fa-globe fa-xl"></i></li>
   <li class="nav-item"><a class="nav-link" href="?lang=en">English</a></li>
+  <li class="nav-item nav-el">|</li>
   <li class="nav-item"><a class="nav-link" href="?lang=es">Español</a></li>
-  
 change password page title:
   en: |
     <div id='nav-title-container' class='title-container'>
@@ -71,10 +71,10 @@ change password page title:
         </div>
     </div>
 forgot password page navigation bar html: |
-  <li class="nav-item al-title"><i class="fa-solid fa-globe fa-xl"></i></li>
+  <li class="nav-item nav-el"><i class="fa-solid fa-globe fa-xl"></i></li>
   <li class="nav-item"><a class="nav-link" href="?lang=en">English</a></li>
+  <li class="nav-item nav-el">|</li>
   <li class="nav-item"><a class="nav-link" href="?lang=es">Español</a></li>
-  
 forgot password page title:
   en: |
     <div id='nav-title-container' class='title-container'>

@@ -9,7 +9,6 @@
   "You must select an option.": "Please select an option."
   "You must sign your name to continue.": "Please sign your name to continue."
   "You must type at least %s characters.": "Please type at least %s characters."
-  
   "You need to enter a complete e-mail address.": "Please enter a complete e-mail address."
   "You need to enter a date and time between %s and %s.": "Please enter a date and time between %s and %s."
   "You need to enter a date and time on or after %s.": "Please enter a date and time on or after %s."
@@ -32,7 +31,6 @@
   "You need to select one.": "Please select one."
   "You need to type in a name for the file": "Please type in a name for the file"
   "You need to type in a name for the interview": "Please type in a name for the interview"
-
   "In progress forms": "My Easy Forms"
   "Register": "Create an account"
   "Already registered?": "Already have an ILAO Easy Forms account?"
@@ -40,6 +38,11 @@
   "New here? Register.": "New here? Create an account."
   "The date needs to be on or before %s.": "The date has to be %s or before."
   "The date needs to be on or after %s.": "The date has to be %s or after."
+  "Forgot your Password?": "Forgot your password?"
+  "Old Password": "Old password"
+  "New Password": "New password"
+  "Retype New Password": "Retype new password"
+
 "es":
   "Are you sure you want to delete all saved interviews?": "¿Está seguro de que desea eliminar todos los Formularios Fáciles guardados?"
   "Available interviews": "Formularios Fáciles disponibles"
@@ -51,7 +54,6 @@
   "You must select an option.": "Por favor, seleccione una opción."
   "You must sign your name to continue.": "Debe firmar su nombre para continuar."
   "You must type at least %s characters.": "Debe escribir al menos %s caracteres."
-  
   "You need to enter a complete e-mail address.": "Por favor, introduzca una dirección de correo electrónico completa."
   "You need to enter a date and time between %s and %s.": "Por favor, introduzca una fecha y hora entre %s y %s."
   "You need to enter a date and time on or after %s.": "Por favor, introduzca una fecha y hora en o después de %s."
@@ -104,6 +106,8 @@
   "Sign Your Name": "Firma con tu nombre"
   "Sign In": "Iniciar sesión"
   "Sign in": "Iniciar sesión"
+  "Sign In.": "Iniciar sesión."
+  "Sign in.": "Iniciar sesión."
   "Sign out": "Cerrar sesión"
   "Sign Out": "Cerrar sesión"
   "Password": "Contraseña"
@@ -126,10 +130,7 @@
   "Send reset password email": "Enviar correo para restablecer la contraseña"
   "Create an account": "Crear una cuenta"
   "Register": "Crear una cuenta"
-  "Already have an ILAO Easy Form account? Sign in.": " Inicia sesión."
-  "Already registered?": "¿Ya tienes una cuenta de ILAO Easy Form? Inicia sesión."
-  "New here?  Register.": "¿Eres nuevo por aquí? Inicia sesión."
-  "New here? Register.": "¿Eres nuevo por aquí? Inicia sesión."
+  "Already registered?": "¿Ya tienes una cuenta de ILAO Easy Form?"
   "Cancel": "Cancelar"
   "No month has %s days.": "Ningún mes tiene %s días."
   "Please enter a value greater or equal to %s.": "Por favor, ingresa un valor mayor o igual que %s."
