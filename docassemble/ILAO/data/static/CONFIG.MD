@@ -43,7 +43,7 @@ register page title:
             <img src="https://easyforms.illinoislegalaid.org/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
         </div>
         <div class="al-title">
-            Create an account
+            Crear una cuenta
         </div>
     </div>
 change password page navigation bar html: |
@@ -58,7 +58,7 @@ change password page title:
             <img src="https://easyforms.illinoislegalaid.org/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
         </div>
         <div class="al-title">
-	    Change Password
+            Change Password
         </div>
     </div>
   es: |
@@ -67,7 +67,7 @@ change password page title:
             <img src="https://easyforms.illinoislegalaid.org/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
         </div>
         <div class="al-title">
-	    Change Password
+            Confirma la contraseña
         </div>
     </div>
 forgot password page navigation bar html: |
@@ -91,6 +91,6 @@ forgot password page title:
             <img src="https://easyforms.illinoislegalaid.org/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
         </div>
         <div class="al-title">
-            Forgot Password
+            Olvidé mi contraseña
         </div>
     </div>
