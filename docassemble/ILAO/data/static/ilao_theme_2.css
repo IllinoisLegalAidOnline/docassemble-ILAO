@@ -79,7 +79,7 @@ p a {
   font-weight:bold;
   text-decoration: none;
 }
-.text-end btn {
+.text-end a.btn {
   font-weight:normal;
 }
 
