@@ -138,3 +138,7 @@
   "The date needs to be on or before %s.": "La fecha debe ser igual o anterior al %s."
   "The date needs to be on or after %s.": "La fecha debe ser igual o posterior al %s."
   "%s %s doesn't have %s days.": "%s %s no tiene %s días."
+  "Listen": "Escuchar"
+  "Restart": "Reiniciar"
+  "Pause": "Pausar"
+  "Stop": "Detener"
