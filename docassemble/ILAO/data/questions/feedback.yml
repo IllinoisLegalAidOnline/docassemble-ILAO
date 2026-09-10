@@ -162,3 +162,11 @@ question: |
   Feedback sent
 subquestion: |
   Thank you for your feedback!
+---
+language: es
+id: email ending screen
+event: ending_screen
+question: |
+  Comentarios enviada
+subquestion: |
+  ¡Gracias por tus comentarios!
