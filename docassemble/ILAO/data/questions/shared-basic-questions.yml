@@ -202,10 +202,24 @@ question: |
   You have saved answers available for this Easy Form.
 subquestion: |
   % for interview in interview_list(filename=current_interview_url)[0]:
-  * ${'<a class="xyz" href="' + interview_url(i=current_interview_url, session=interview['session']) + '">' +  interview['title'] +  (' (' + interview.get("subtitle",'') + ')' if interview.get('subtitle') else '')  +"</a>" }  Last visited ${format_date(interview['modtime'])}, currently on page **${interview['dict'].get('_internal',{}).get('steps')}**
+  * ${'<a class="xyz" href="' + interview_url(i=current_interview_url, session=interview['session']) + '">' +  interview['title'] +  (' (' + interview.get("subtitle",'') + ')' if interview.get('subtitle') else '')  +"</a>" } Last visited ${format_date(interview['modtime'])}, currently on page **${interview['dict'].get('_internal',{}).get('steps')}**
   % endfor
-  
+
   [**View all of your saved Easy Forms**](${url_of('interviews')})
+---
+language: es
+id: load saved answers
+event: load_answer
+comment: |
+  Docassemble 1.1.44 enabled pagination of interview_list()
+question: |
+  Tienes respuestas guardadas disponibles para este Formulario Fácil.
+subquestion: |
+  % for interview in interview_list(filename=current_interview_url)[0]:
+  * ${'<a class="xyz" href="' + interview_url(i=current_interview_url, session=interview['session']) + '">' +  interview['title'] +  (' (' + interview.get("subtitle",'') + ')' if interview.get('subtitle') else '')  +"</a>" } Última visita ${format_date(interview['modtime'])}, actualmente en la página **${interview['dict'].get('_internal',{}).get('steps')}**
+  % endfor
+
+  [**Ver todos tus Formularios Fáciles guardados**](${url_of('interviews', lang="es")})
 ---
 # added 11-1-2021 to customize email ALDocumentBundle forms functionality
 ---

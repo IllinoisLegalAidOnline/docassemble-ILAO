@@ -42,6 +42,7 @@
   "Old Password": "Old password"
   "New Password": "New password"
   "Retype New Password": "Retype new password"
+  "Password and Retype Password did not match": "Password and Retype Password did not match."  
 
 "es":
   "Are you sure you want to delete all saved interviews?": "¿Está seguro de que desea eliminar todos los Formularios Fáciles guardados?"
@@ -126,6 +127,8 @@
   "New Password": "Nueva contraseña"
   "Retype New password": "Confirma tu nueva contraseña"
   "Retype New Password": "Confirma tu nueva contraseña"
+  "Password must be at least six characters long with at least one lowercase letter, at least one uppercase letter, y at least one number.": "La contraseña debe tener al menos seis caracteres e incluir al menos una letra minúscula, una letra mayúscula y un número."
+  "Password and Retype Password did not match": "Password and Retype Password did not match."
   "Your email address": "Tu correo electrónico"
   "Send reset password email": "Enviar correo para restablecer la contraseña"
   "Create an account": "Crear una cuenta"
@@ -142,3 +145,6 @@
   "Restart": "Reiniciar"
   "Pause": "Pausar"
   "Stop": "Detener"
+  "Last visited": "Última visita"
+  "currently on page": "actualmente en la página"
+  "View all of your saved Easy Forms": "Ver todos tus Formularios Fáciles guardados"
