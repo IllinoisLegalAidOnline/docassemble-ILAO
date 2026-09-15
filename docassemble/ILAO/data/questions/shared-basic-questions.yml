@@ -213,21 +213,42 @@ id: start a new session
 question: |
   Do you want to start over?
 subquestion: |
-  % if not user_logged_in():
-  You may lose access to your current answers. Make sure you have downloaded
-  any forms that you need.
-  % else:
-  You can still access your current answers by visiting the "My Easy Forms"
-  page.
-  % endif
-  
-  Click **Start over** to start a new copy of the form you are working on,
-  or **Back** if you want to keep working.
+  ${ al_start_over_confirmation_subquestion }
 back button label: |
   Back
 continue button label: |
   Start over
 continue button field: al_start_over_confirmation
+---
+template: al_start_over_confirmation_question
+content: >-
+  Do you want to start over?
+---
+template: al_start_over_confirmation_subquestion
+content: |
+  % if not user_logged_in():
+  You may lose access to your current answers. Make sure you have downloaded any forms that you need.
+  % else:
+  You can still access your current answers by visiting the "My Easy Forms" page from the menu.
+  % endif
+  
+  Click "OK" to start a new copy of the form you are working on, or "Cancel" if you want to keep working.
+---
+language: es
+template: al_start_over_confirmation_question
+content: >-
+  ¿Quieres empezar de nuevo?
+---
+language: es
+template: al_start_over_confirmation_subquestion
+content: |
+  % if not user_logged_in():
+  Puedes perder el acceso a tus respuestas actuales. Asegúrate de haber descargado los formularios que necesites.
+  % else:
+  Aún puedes acceder a tus respuestas actuales visitando la página "Mis Formularios Fáciles" desde el menú.
+  % endif
+
+  Haz clic en "OK" para empezar una nueva copia del formulario en el que estás trabajando, o en "Cancel" si quieres seguir trabajando.
 ---
 #See documentation on county functionality
 generic object: ALAddress
