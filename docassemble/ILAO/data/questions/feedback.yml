@@ -95,7 +95,7 @@ code: |
     easy_form_session_info_not_found = False
   
 ---
-id: email forms
+id: easy form feedback
 question: |
   Easy Form feedback
 subquestion: |
@@ -104,6 +104,7 @@ subquestion: |
   % else:
   Let us know what you think about the **${ url_args.get('easy_form_title') }** Easy Form.
   % endif
+  Your feedback will be sent to our team for review.
 fields:
   - Which Easy Form did you use?: easy_form_selection
     code: get_easy_forms_names()
@@ -121,6 +122,8 @@ fields:
     datatype: email
     required: False
 continue button label: Submit
+under: |
+    **Note:** To return to your Easy Form, go back to the other tab or window.
 ---
 template: forms_email
 subject: |
@@ -158,6 +161,7 @@ code: |
 ---
 id: email ending screen
 event: ending_screen
+prevent going back: True
 question: |
   Feedback sent
 subquestion: |
