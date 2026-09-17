@@ -84,3 +84,6 @@ default screen parts:
     % endif
   footer: off
 ---
+code: |
+  ilao_easy_form_title_es = ""
+  ilao_easy_form_url_es = ""
