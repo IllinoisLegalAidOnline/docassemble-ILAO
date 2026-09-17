@@ -73,6 +73,14 @@ a
 /* Bold all links, according to ILAO Style. */
 p a {
   font-weight:bold;
+  text-decoration: none;
+}
+.text-end a {
+  font-weight:bold;
+  text-decoration: none;
+}
+.text-end a.btn {
+  font-weight:normal;
 }
 
 .btn-primary {
@@ -317,4 +325,35 @@ a.daclickable.danavlink,
 
 
 
-
+/* administrative pages (login/register) */
+#nav-title-container {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  grid-template-rows: min-content;
+  gap: 0px 0.5em;
+  grid-template-areas: "logo title";
+  justify-items: start;
+  align-items: center;
+}
+.title-container {
+  align-items: center;
+  gap: 10px;
+}
+.al-logo {
+  grid-area: logo;
+  align-items: center;
+}
+.al-logo img {
+  height: 40px;
+}
+.al-title {
+  grid-area: title;
+  align-items: center;
+  color: white;
+}
+.nav-el {
+  grid-area: title;
+  display: flex;
+  align-items: center;
+  color: white;
+}

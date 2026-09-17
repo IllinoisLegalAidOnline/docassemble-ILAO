@@ -1,3 +1,5 @@
+translations:
+  - ILAO_es.xlsx
 ---
 imports:
   - urllib.parse
@@ -91,8 +93,18 @@ id: your birthdate
 question: |
   When were you born?
 fields:
-  - Birthdate: user.birthdate
-    datatype: date
+  - Date of birth: user.birthdate
+    datatype: BirthDate
+    alDefaultMessage: ${ word('Enter a valid date of birth.') }
+    alMin: ${ today().minus(years=100) }
+    alMax: ${ today().format("yyyy-MM-dd") }
+    alMinMessage: ${ word('Must be at least 100 years ago.') }
+    alMaxMessage: ${ word('Cannot be in the future.') }
+    alInvalidDayMessage: ${ word('Cannot have that many days.') }
+    alInvalidYearMessage: ${ word('Year is not valid.') }
+    alMonthLabel: ${ word('Month') }
+    alDayLabel: ${ word('Day') }
+    alYearLabel: ${ word('Year') }
 ---
 id: your address
 question: |
@@ -100,6 +112,7 @@ question: |
 fields:
   - Street address: user.address.address
     address autocomplete: True
+    hint: ${ word("Enter a location") }
   - Address line 2: user.address.unit
     required: False
   - City: user.address.city
@@ -123,6 +136,7 @@ subquestion: |
 fields:
   - Street address: users[0].address.address
     address autocomplete: True
+    hint: ${ word("Enter a location") }
   - Address line 2: users[0].address.unit
     required: False
   - City: users[0].address.city
@@ -188,10 +202,24 @@ question: |
   You have saved answers available for this Easy Form.
 subquestion: |
   % for interview in interview_list(filename=current_interview_url)[0]:
-  * ${'<a class="xyz" href="' + interview_url(i=current_interview_url, session=interview['session']) + '">' +  interview['title'] +  (' (' + interview.get("subtitle",'') + ')' if interview.get('subtitle') else '')  +"</a>" }  Last visited ${format_date(interview['modtime'])}, currently on page **${interview['dict'].get('_internal',{}).get('steps')}**
+  * ${'<a class="xyz" href="' + interview_url(i=current_interview_url, session=interview['session']) + '">' +  interview['title'] +  (' (' + interview.get("subtitle",'') + ')' if interview.get('subtitle') else '')  +"</a>" } Last visited ${format_date(interview['modtime'])}, currently on page **${interview['dict'].get('_internal',{}).get('steps')}**
   % endfor
-  
+
   [**View all of your saved Easy Forms**](${url_of('interviews')})
+---
+language: es
+id: load saved answers
+event: load_answer
+comment: |
+  Docassemble 1.1.44 enabled pagination of interview_list()
+question: |
+  Tienes respuestas guardadas disponibles para este Formulario Fácil.
+subquestion: |
+  % for interview in interview_list(filename=current_interview_url)[0]:
+  * ${'<a class="xyz" href="' + interview_url(i=current_interview_url, session=interview['session']) + '">' +  interview['title'] +  (' (' + interview.get("subtitle",'') + ')' if interview.get('subtitle') else '')  +"</a>" } Última visita ${format_date(interview['modtime'])}, actualmente en la página **${interview['dict'].get('_internal',{}).get('steps')}**
+  % endfor
+
+  [**Ver todos tus Formularios Fáciles guardados**](${url_of('interviews', lang="es")})
 ---
 # added 11-1-2021 to customize email ALDocumentBundle forms functionality
 ---
@@ -199,21 +227,42 @@ id: start a new session
 question: |
   Do you want to start over?
 subquestion: |
-  % if not user_logged_in():
-  You may lose access to your current answers. Make sure you have downloaded
-  any forms that you need.
-  % else:
-  You can still access your current answers by visiting the "My Easy Forms"
-  page.
-  % endif
-  
-  Click **Start over** to start a new copy of the form you are working on,
-  or **Back** if you want to keep working.
+  ${ al_start_over_confirmation_subquestion }
 back button label: |
   Back
 continue button label: |
   Start over
 continue button field: al_start_over_confirmation
+---
+template: al_start_over_confirmation_question
+content: >-
+  Do you want to start over?
+---
+template: al_start_over_confirmation_subquestion
+content: |
+  % if not user_logged_in():
+  You may lose access to your current answers. Make sure you have downloaded any forms that you need.
+  % else:
+  You can still access your current answers by visiting the "My Easy Forms" page from the menu.
+  % endif
+  
+  Click "OK" to start a new copy of the form you are working on, or "Cancel" if you want to keep working.
+---
+language: es
+template: al_start_over_confirmation_question
+content: >-
+  ¿Quieres empezar de nuevo?
+---
+language: es
+template: al_start_over_confirmation_subquestion
+content: |
+  % if not user_logged_in():
+  Puedes perder el acceso a tus respuestas actuales. Asegúrate de haber descargado los formularios que necesites.
+  % else:
+  Aún puedes acceder a tus respuestas actuales visitando la página "Mis Formularios Fáciles" desde el menú.
+  % endif
+
+  Haz clic en "OK" para empezar una nueva copia del formulario en el que estás trabajando, o en "Cancel" si quieres seguir trabajando.
 ---
 #See documentation on county functionality
 generic object: ALAddress
@@ -359,6 +408,31 @@ template: x.get_email_copy
 content: |
   Send a copy of your forms to your email
 ---
+generic object: ALDocumentBundle
+template: x.view_label
+content: |
+  ${ word("View") }
+---
+generic object: ALDocumentBundle
+template: x.download_label
+content: |
+  ${ word("Download") }
+---
+generic object: ALDocumentBundle
+template: x.send_label
+content: |
+  ${ word("Send") }
+---
+generic object: ALDocumentBundle
+template: x.zip_label
+content: |
+  ${ word("Download all") } <span class="visually-hidden">${ x.title }</span>
+---
+generic object: ALDocumentBundle
+template: x.zip_row_label
+content: |
+  ${ word("All forms") }
+---
 generic object: ALAddress
 template: x.unit_label
 content: |
@@ -368,7 +442,6 @@ generic object: ALAddress
 template: x.postal_code_label
 content: |
   ZIP code
-
 ---
 variable name: al_name_suffixes
 data:
