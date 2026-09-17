@@ -166,6 +166,10 @@ question: |
   Feedback sent
 subquestion: |
   Thank you for your feedback!
+
+  We will review your feedback as soon as we can.
+under: |
+  **Note:** To return to your Easy Form, go back to the other tab or window.
 ---
 language: es
 id: email ending screen
@@ -174,3 +178,7 @@ question: |
   Comentarios enviada
 subquestion: |
   ¡Gracias por tus comentarios!
+
+  Revisaremos tus comentarios lo antes posible.
+under: |
+  **Nota:** Para volver a tu Formulario Fácil, vuelve a la pestaña o ventana anterior.
