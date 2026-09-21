@@ -7,7 +7,7 @@ code: |
 ---
 metadata:
   interview page title:
-    en: My Easy Forms
+    "en*": My Easy Forms
     es: Mis Formularios Fáciles
   title: 
     "en*": My Easy Forms
@@ -22,6 +22,9 @@ metadata:
   exit url:
     "en*": https://www.illinoislegalaid.org 
     "es": https://es.illinoislegalaid.org 
+  subtitle:
+    "en*": In progress
+    "es": En curso
 ---
 # Spanish section
 language: es
@@ -71,6 +74,30 @@ code: |
   LOGO_TITLE_ROW_2 = "In progress"
 ---
 default screen parts:
+  title url: |
+    ${ localized_metadata_text(all_variables(special='metadata'), 'title url') }
+  title: |
+    ${ localized_metadata_text(all_variables(special='metadata'), 'title') }
+  logo: |
+    <div id='nav-title-container' class='title-container'>
+      <div class="al-logo">
+        <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
+      </div>
+      <div class="al-title">
+        <div class="title-row-1">${ localized_metadata_text(all_variables(special='metadata'), 'title') }</div>
+        <div class="title-row-2">${ localized_metadata_text(all_variables(special='metadata'), 'subtitle') }</div>
+      </div>
+    </div> 
+  short logo: |
+    <div id='nav-title-container' class='title-container'>
+      <div class="al-logo">
+        <img src="/packagestatic/docassemble.ILAO/logo_white_30.svg" alt="Illinois Legal Aid Online">
+      </div>
+      <div class="al-title">
+        <div class="title-row-1">${ localized_metadata_text(all_variables(special='metadata'), 'short title') }</div>
+        <div class="title-row-2">${ localized_metadata_text(all_variables(special='metadata'), 'subtitle') }</div>
+      </div>
+    </div>
   navigation bar html: |
     % if enable_al_language and len(al_interview_languages) > 1:
     ${ get_language_list_dropdown(al_interview_languages, current=session_local.attr("al_user_language") or al_user_language, icon="fas fa-globe fa-xl") }
