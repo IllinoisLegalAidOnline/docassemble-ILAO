@@ -5,27 +5,6 @@ initial: True
 code: |
   al_interview_languages = ["en","es"]
 ---
-metadata:
-  interview page title:
-    "en*": My Easy Forms
-    es: Mis Formularios Fáciles
-  title: 
-    "en*": My Easy Forms
-    "es": Mis Formularios Fáciles
-  short title:
-    "en*": My Easy Forms
-    "es": Mis Formularios Fáciles
-  temporary session: True
-  title url: 
-    "en*": https://www.illinoislegalaid.org 
-    "es": https://es.illinoislegalaid.org 
-  exit url:
-    "en*": https://www.illinoislegalaid.org 
-    "es": https://es.illinoislegalaid.org 
-  subtitle:
-    "en*": In progress
-    "es": En curso
----
 # Spanish section
 language: es
 sections:
@@ -50,6 +29,28 @@ objects:
 include:
   - docassemble.AssemblyLine:assembly_line.yml
   - docassemble.AssemblyLine:interview_list.yml
+---
+metadata:
+  interview page title:
+    "en*": My Easy Forms
+    es: Mis Formularios Fáciles
+  title: 
+    "en*": My Easy Forms
+    "es": Mis Formularios Fáciles
+  short title:
+    "en*": My Easy Forms
+    "es": Mis Formularios Fáciles
+  temporary session: True
+  title url: 
+    "en*": https://www.illinoislegalaid.org 
+    "es": https://es.illinoislegalaid.org 
+  exit url:
+    "en*": https://www.illinoislegalaid.org 
+    "es": https://es.illinoislegalaid.org 
+  subtitle:
+    "en*": In progress
+    "es": En curso
+# moved this to AFTER the includes since they were overwriting metadata tiltle and short title
 ---
 modules:
   - .toolbox
