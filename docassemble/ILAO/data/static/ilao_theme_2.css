@@ -357,3 +357,9 @@ a.daclickable.danavlink,
   align-items: center;
   color: white;
 }
+
+input:not(:checked) + .dalabelauty {
+  color: #495057;
+  background-color: #e2e3e5;
+  border-color: #dee2e6;
+}
