@@ -359,7 +359,12 @@ a.daclickable.danavlink,
 }
 
 input:not(:checked) + .dalabelauty {
-  color: #495057;
-  background-color: #e2e3e5;
-  border-color: #dee2e6;
+  color: #000;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+
+input:not(:checked) + .dalabelauty:hover {
+  background-color: #d3d4d5;
+  border-color: #c6c7c8;
 }
